@@ -12,7 +12,7 @@ public class MySqlConnection {
     public static Connection getConnection() throws SQLException {
         Connection connection = null;
 
-        try (FileInputStream fis = new FileInputStream("C:\\IdeaProjects\\UI-BD-Project\\src\\cat\\insvidreres\\infernandez\\uibdproject\\connection.properties")) {
+        try (FileInputStream fis = new FileInputStream("C:\\IdeaProjects\\1rDAM\\UI-BD-Project\\src\\cat\\insvidreres\\infernandez\\uibdproject\\connection.properties")) {
             //TODO
             Properties pros = new Properties();
             pros.load(fis);
@@ -20,6 +20,7 @@ public class MySqlConnection {
             String user = pros.getProperty("user");
             String password = pros.getProperty("password");
             String url = pros.getProperty("url");
+//            System.out.println("user: " + user + " | password: " + password + " | url: " + url);
 
             connection = DriverManager.getConnection(url, user, password);
 
